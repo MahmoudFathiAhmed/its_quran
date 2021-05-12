@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'It is Quran>>'),
+      home: MyHomePage(title: 'إنه القرآن'),
     );
   }
 }
