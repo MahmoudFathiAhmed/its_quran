@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  video_player: ^2.1.1
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -65,6 +66,9 @@ flutter:
     - Assets/Icons/menu.png
     - Assets/Icons/search.png
     - Assets/Icons/menu-2@2x.png
+    - Assets/Icons/back@2x.png
+    - Assets/Icons/share@2x.png
+    - Assets/Icons/tavideo@2x.png
 
   #   - images/a_dot_ham.jpeg
 
@@ -79,11 +83,12 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  fonts:
+    - family: GE SS
+      fonts:
+        - asset: Assets/Font/GE SS Two Bold.otf
+        - asset: Assets/Font/GE SS Two Light.otf
+        - asset: Assets/Font/GE SS Two Medium.otf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
