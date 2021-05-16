@@ -8,7 +8,8 @@ import 'package:video_player/video_player.dart';
 
 class NetworkVideoPlayerWidget extends StatefulWidget {
   @override
-  _NetworkVideoPlayerWidgetState createState() => _NetworkVideoPlayerWidgetState();
+  _NetworkVideoPlayerWidgetState createState() =>
+      _NetworkVideoPlayerWidgetState();
 }
 
 class _NetworkVideoPlayerWidgetState extends State<NetworkVideoPlayerWidget> {
@@ -19,7 +20,7 @@ class _NetworkVideoPlayerWidgetState extends State<NetworkVideoPlayerWidget> {
   void initState() {
     super.initState();
 
-    controller = VideoPlayerController.network('https://www.youtube.com/watch?v=h6WI9YDvipw')
+    controller = VideoPlayerController.network('https://youtu.be/N1ZIp1Rbq28')
       ..addListener(() => setState(() {}))
       ..setLooping(true)
       ..initialize().then((_) => controller.play());
