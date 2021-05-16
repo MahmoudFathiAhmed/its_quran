@@ -66,9 +66,9 @@ flutter:
     - Assets/Icons/menu.png
     - Assets/Icons/search.png
     - Assets/Icons/menu-2@2x.png
-    - Assets/Icons/back@2x.png
-    - Assets/Icons/share@2x.png
-    - Assets/Icons/tavideo@2x.png
+    - Assets/Icons/back.png
+    - Assets/Icons/share.png
+    - Assets/Icons/tavideo.png
 
   #   - images/a_dot_ham.jpeg
 

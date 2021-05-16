@@ -38,6 +38,12 @@ class BasicOverlayWidget extends StatelessWidget {
           alignment: Alignment.center,
           // color: Colors.black26,
           // child: Icon(Icons.play_arrow, color: Colors.white, size: 80),
-          decoration: BoxDecoration(image:DecorationImage(image: AssetImage('AssetImage("Assets/Icons/fullplay.png")'))),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                'Assets/Icons/fullplay.png',
+              ),
+            ),
+          ),
         );
 }

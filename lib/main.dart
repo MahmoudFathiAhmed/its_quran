@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:its_quran/screens/home_screen.dart';
+import 'package:its_quran/screens/network_video_player_screen.dart';
 import './widgets/video/network_video_player_widget.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       home: HomeScreen(),
       routes: {
         'test': (context) {
-          return NetworkVideoPlayerWidget();
+          return NetworkVideoPlayerScreen();
         }
       },
     );

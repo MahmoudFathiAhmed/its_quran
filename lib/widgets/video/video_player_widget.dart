@@ -20,10 +20,9 @@ class VideoPlayerWidget extends StatelessWidget {
             );
 
   Widget buildVideo() => Stack(
-        fit: StackFit.expand,
         children: <Widget>[
           buildVideoPlayer(),
-          BasicOverlayWidget(controller: controller),
+          Positioned.fill(child: BasicOverlayWidget(controller: controller)),
         ],
       );
 
