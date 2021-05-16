@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:its_quran/screens/home_screen.dart';
+import './widgets/video/network_video_player_widget.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +17,11 @@ class MyApp extends StatelessWidget {
         accentColor: Color(0xFFFFC710),
       ),
       home: HomeScreen(),
+      routes: {
+        'test': (context) {
+          return NetworkVideoPlayerWidget();
+        }
+      },
     );
   }
 }
-

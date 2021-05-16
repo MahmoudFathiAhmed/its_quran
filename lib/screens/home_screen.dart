@@ -15,7 +15,9 @@ class HomeScreen extends StatelessWidget {
           }),
         ],
         leading: GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.of(context).pushNamed('test');
+          },
           child: Container(
             height: MediaQuery.of(context).size.height * .06,
             decoration: BoxDecoration(
