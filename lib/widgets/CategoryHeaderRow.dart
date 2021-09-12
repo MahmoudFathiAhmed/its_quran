@@ -10,13 +10,10 @@ class CategoryHeaderRow extends StatelessWidget {
   final String caption;
   final ItemType type;
 
-
   const CategoryHeaderRow({
-
-     @required this.title = '',
-     @required this.caption = '',
+    @required this.title = '',
+    @required this.caption = '',
     @required this.type,
-
   });
 
   @override
@@ -40,15 +37,14 @@ class CategoryHeaderRow extends StatelessWidget {
           ),
           OutlinedButton.icon(
             onPressed: () {
-Map<String,dynamic> map=Map();
-map["type"]=type;
-map["title"]=title;
-Provider.of<HomeProvider>(context,listen: false).changeAuthor(author: "");
+              Map<String, dynamic> map = Map();
+              map["type"] = type;
+              map["title"] = title;
+              Provider.of<HomeProvider>(context, listen: false)
+                  .changeAuthor(author: "");
 
-              Navigator.of(context).pushNamed(FullCategScreen.routeName,arguments:map );
-
-
-
+              Navigator.of(context)
+                  .pushNamed(FullCategScreen.routeName, arguments: map);
             },
             icon: Image.asset('assets/right.png'),
             label: Text('شاهد الكل',

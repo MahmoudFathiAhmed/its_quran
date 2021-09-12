@@ -40,6 +40,7 @@ class AppDrawer extends StatelessWidget {
                   'assets/home.png',
                   scale: 0.9,
                 ),
+                onTap: () => Navigator.pop(context),
               ),
               ListTile(
                 title: Text('الأقسام'),
@@ -51,27 +52,28 @@ class AppDrawer extends StatelessWidget {
                     Navigator.of(context).pushNamed(CategsScreen.routeName),
               ),
               ListTile(
-                title: Text('د/ أحمد عبد المنعم'),
-                leading: Image.asset(
-                  'assets/monem.png',
-                  scale: 0.8,
-                ),
-                onTap: () {
-                  Provider.of<HomeProvider>(context,listen: false).changeAuthor(author: "1");
-                  Navigator.of(context).pushNamed(
-                      SheikhScreen.routeName, arguments: "د/ أحمد عبد المنعم");
-
-                }
-              ),
+                  title: Text('د/ أحمد عبد المنعم'),
+                  leading: Image.asset(
+                    'assets/monem.png',
+                    scale: 0.8,
+                  ),
+                  onTap: () {
+                    Provider.of<HomeProvider>(context, listen: false)
+                        .changeAuthor(author: "1");
+                    Navigator.of(context).pushNamed(SheikhScreen.routeName,
+                        arguments: "د/ أحمد عبد المنعم");
+                  }),
               ListTile(
                 title: Text('ش/ عمرو الشرقاوي'),
                 leading: Image.asset(
                   'assets/sharkawy.png',
                   scale: 0.8,
                 ),
-                onTap: (){
-                  Provider.of<HomeProvider>(context,listen: false).changeAuthor(author: "2");
-                  Navigator.of(context).pushNamed(SheikhScreen.routeName,arguments: "ش/ عمرو الشرقاوي");
+                onTap: () {
+                  Provider.of<HomeProvider>(context, listen: false)
+                      .changeAuthor(author: "2");
+                  Navigator.of(context).pushNamed(SheikhScreen.routeName,
+                      arguments: "ش/ عمرو الشرقاوي");
                 },
               ),
               ListTile(
@@ -101,15 +103,18 @@ class AppDrawer extends StatelessWidget {
                 onTap: () =>
                     Navigator.of(context).pushNamed(ContactScreen.routeName),
               ),
-              // ListTile(
-              //   title: Text('نظام مداد كلاود'),
-              //   leading: Image.asset(
-              //     'assets/midadcloud.png',
-              //     scale: 3,
-              //   ),
-              //   onTap: () =>
-              //       Navigator.of(context).pushNamed(MidadCloudSystem.routeName),
-              // ),
+              ListTile(
+                title: Text('نظام مداد كلاود'),
+                leading: Hero(
+                  tag: 'midadc',
+                  child: Image.asset(
+                    'assets/midadcloud.png',
+                    scale: 3,
+                  ),
+                ),
+                onTap: () =>
+                    Navigator.of(context).pushNamed(MidadCloudSystem.routeName),
+              ),
             ],
           ),
         ),

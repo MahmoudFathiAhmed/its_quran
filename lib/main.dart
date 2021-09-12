@@ -1,6 +1,5 @@
 // @dart=2.9
 
-
 import 'package:flutter/material.dart';
 import 'package:its_quran/Provider/home_provider.dart';
 import 'package:its_quran/screens/attachmentsAll.dart';
@@ -20,13 +19,10 @@ import 'package:provider/provider.dart';
 import 'package:test/test.dart';
 import 'screens/contactUs.dart';
 import 'screens/fullCategScreen.dart';
+import 'widgets/video/youtube_player.dart';
 
-void main() async{
-
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-
-
 
   runApp(MyApp());
 }
@@ -57,12 +53,12 @@ class MyApp extends StatelessWidget {
           GlobalWidgetsLocalizations.delegate,
         ],
         supportedLocales: [
-          Locale("fa", "IR"), // OR Locale('ar', 'AE') OR Other RTL locales
+          Locale("ar"), // OR Locale('ar', 'AE') OR Other RTL locales
         ],
-        locale: Locale("fa", "IR"),
+        locale: Locale("ar"),
         theme: ThemeData(
           primaryColor: Color(0xFF000E1F),
-          accentColor:  Color(0xFFFFC710),
+          accentColor: Color(0xFFFFC710),
           fontFamily: 'GE SS',
           textTheme: TextTheme(
             //For ListTile's title
@@ -120,12 +116,15 @@ class MyApp extends StatelessWidget {
               fontWeight: FontWeight.w700,
               color: Color(0xFFAFAFAF),
             ),
-            contentPadding: EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
+            contentPadding:
+                EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
           ),
         ),
-        home: HomeScreen(),
+        home: SafeArea(
+          child: HomeScreen(),
+        ),
         routes: {
-          '/test': (ctx) => NetworkVideoPlayerScreen(),
+          '/tabs': (ctx) => NetworkVideoPlayerScreen(),
           AttachmentsScreen.routeName: (ctx) => AttachmentsScreen(),
           PrivacyPolicyScreen.routeName: (ctx) => PrivacyPolicyScreen(),
           TermsOfUse.routeName: (ctx) => TermsOfUse(),
@@ -134,8 +133,8 @@ class MyApp extends StatelessWidget {
           ContactScreen.routeName: (ctx) => ContactScreen(),
           SheikhScreen.routeName: (ctx) => SheikhScreen(),
           FullCategScreen.routeName: (ctx) => FullCategScreen(),
-          WebViewScreen.routeName:(ctx)=>WebViewScreen(),
-          SearchScreen.routeName:(ctx)=>SearchScreen(),
+          WebViewScreen.routeName: (ctx) => WebViewScreen(),
+          SearchScreen.routeName: (ctx) => SearchScreen(),
         },
       ),
     );

@@ -5,6 +5,8 @@ import 'package:its_quran/widgets/HomeScreenSection.dart';
 import 'package:its_quran/widgets/searchButton.dart';
 import 'package:its_quran/widgets/sheikhScreenTabContentGridView.dart';
 import 'package:provider/provider.dart';
+import 'package:its_quran/widgets/back_arrow.dart';
+
 
 class FullCategScreen extends StatefulWidget {
   static String routeName = '/fullCateg';

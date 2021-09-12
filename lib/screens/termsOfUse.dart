@@ -1,37 +1,87 @@
 import 'package:flutter/material.dart';
 import 'package:its_quran/screens/templateScreen.dart';
 
+import 'midadCloudSystem.dart';
+import 'privacyPolicyScreen.dart';
+
 class TermsOfUse extends StatelessWidget {
   static String routeName = '/terms';
 
-  String text='تختلف النفوس سعةً وضيقاً كما تختلف الغرف والمنازل والأماكن؛ فمن الناس من تضيق نفسه حتى تكون كَسَمِّ الخياط، ومنهم من تتسع نفسه حتى تشمل العالم ومافيه، فيكون رحمة للناس كلهم، كما كان سيد ولد آدم عليه الصلاة والسلام \n تضيق النفوس بالجهل وقلة العلم والتجارب، ثم بالعلم والتجربة وقبل   ذلك بالإيمان تتسع وتكون نفساً مشرقة تحب الناس والخير والجمال\ى';
   @override
   Widget build(BuildContext context) {
     return TemplateScreen(
       title: "الشروط والأحكام",
       body: Center(
         child: SingleChildScrollView(
-          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 20.0),
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            
             children: <Widget>[
-              Image.asset(
-                'assets/fullsh.png',
-                scale: 0.5,
+              Container(
+                width: MediaQuery.of(context).size.width,
+                alignment: Alignment.center,
+                child: Image.asset(
+                  'assets/fullsh.png',
+                  scale: 0.6,
+                ),
               ),
               SizedBox(
-                height: 25.0,
+                height: 30.0,
               ),
-              Text(
-              text * 3,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyText1
-                  .copyWith(fontWeight: FontWeight.normal),
-                  textAlign: TextAlign.center,
+              contentTextStyler(
+                isHead: true,
+                isCenter: true,
+                raw: "شروط الاستخدام",
               ),
+              contentTextStyler(
+                raw:
+                    "موقع الأترجّة لإنشاء المقارئ الإلكترونية والمنصات التعليمية, يحتوي على حلقاتٍ وفصول افتراضيةٍ لدراسة المناهج. تستطيع دور التحفيظ و الأكاديميات العلمية والتعليمية استخدامه في نقل نشاطهم إلى شبكة الإنترنت. يرجى قراءة شروط وأحكام الاستخدام (الشروط) التالية بعناية. ",
+              ),
+              contentTextStyler(
+                isHead: true,
+                raw: " الموافقة على الشروط",
+              ),
+              contentTextStyler(
+                raw:
+                    "تمثل هذه الشروط، بما يشمل بيان خصوصية \"موقع إنَّه الْقُرْآن\"، اتفاقاً ملزماً بينك وبين \"موقع إنَّه الْقُرْآن\"، وتعتبر مقبولة من قبلك في كل مرة تستخدم فيها هذا الموقع الإلكتروني أو تنفذ إليه، وفي كل مرة تستخدم فيها أي خدمة من خدمات \"موقع إنَّه الْقُرْآن\". وإن كنت لا تقبل بالشروط المنصوص عليها هنا، فلا تستخدم موقع \"موقع إنَّه الْقُرْآن\" الإلكتروني أو خدماتها. وتشير كلمتا \"أنت\" و\"المستخدم\"، على الوجه الذي تستخدمان فيه هنا، إلى كافة الأفراد و/ أو الجهات التي تنفذ إلى هذا الموقع الإلكتروني لأي سبب من الأسباب.",
+              ),
+              contentTextStyler(
+                isHead: true,
+                raw: " لاستخدام المقبول للموقع ",
+              ),
+              contentTextStyler(
+                raw:
+                    "إن الموقع وموقعه الالكتروني معد للمؤسسات والأفراد الراغبين في إدارة حلقات تحفيظ القرآن الكريم والأكاديميات التعليمية ، والباحثين عن أداة احترافية تأتمت (Automate) عملية الإدارة بمختلف متطلباتها. ",
+              ),
+              contentTextStyler(
+                raw:
+                    "يمكنك استخدام هذا الموقع لأهداف قانونية فقط ضمن السياق الذي أعلن عنه \"موقع إنَّه الْقُرْآن\" للاستخدام المنشود والمقبول للموقع. وتأذن لك الشركة، وتسمح لك باستعراض واستخدام إمكانيات وخدمات الموقع لاستخدامك وفق المتفق عليه حسب التعاقد المبرم بينك وبين \"موقع إنَّه الْقُرْآن\". ولا يحق لك اعادة بيع خدمات الموقع لمستخدمين آخرين.",
+              ),
+              contentTextStyler(
+                raw:
+                    "وأنت تقرّ وتضمن وتوافق على أنك لن تستخدم (أو تخطط أو تشجع أو تساعد آخرين على استخدام) الموقع، لأية أهداف، أو بأية طريقة، محظورة بموجب هذه الشروط والأحكام أو بموجب القانون النافذ. وتقع على عاتقك مسؤولية ضمان امتثال استخدامك للموقع لهذه الشروط والأحكام.",
+              ),
+              contentTextStyler(
+                raw:
+                    "وكذلك تقر وتضمن عدم استخدام المحتوى لأي نشاطات غير منصوص عليها في هذا الاتفاق. ",
+              ),
+              contentTextStyler(
+                isHead: true,
+                raw: " التغيرات التي تطرأ على الشروط والأحكام ",
+              ),
+              contentTextStyler(
+                raw:
+                    "يمكن لنا تنقيح وتعديل هذه الشروط وخدماتنا في أي وقت، بناءً على تقديرنا بمفردنا، بنشر نسخة محدثة منها على الموقع الإلكتروني. ويجب أن تزور هذه الصفحة دورياً لمراجعة أحدث الشروط، لأنها تصبح ملزمة لك بتاريخ نشرها على المواقع الإلكترونية (أو إذا ذكر غير ذلك في أي إشعار بإجراء تغييرات كهذه). وإن كنت لا توافق على الالتزام بالشروط المعدلة، فلن يكون بوسعك الاستمرار في استخدام الخدمات، ويجب أن تمتنع فوراً عن استخدام الموقع الإلكتروني والنفاذ إليه. ونظراً لأن خدماتنا تتطور بمرور الوقت، فيحق لنا تغيير أو إيقاف كافة الخدمات أو أي جزء منها، في أي وقت دون إشعار، بناءً على تقديرنا بمفردنا. ",
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                alignment: Alignment.center,
+                child: learnMooreButton(context,
+                    text: "المزيد عن  الشروط والأحكام",
+                    link: "https://itsthequran.com/ar/terms-conditions"),
+              )
             ],
           ),
         ),

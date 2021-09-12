@@ -16,10 +16,12 @@ import 'package:webview_flutter/webview_flutter.dart';
 //     if (Platform.isAndroid) WebView.platform = SurfaceAndroidWebView();
 //   }
 class SoundCloudTab extends StatelessWidget {
+  final String link;
+  SoundCloudTab({@required  this.link});
   @override
   Widget build(BuildContext context) {
     return WebView(
-      initialUrl: 'https://soundcloud.com/salem-tech-782013788/ebrahim-p01',
+      initialUrl: link,//'https://soundcloud.com/salem-tech-782013788/ebrahim-p01',
       allowsInlineMediaPlayback: true,
       debuggingEnabled: true,
       gestureNavigationEnabled: true,

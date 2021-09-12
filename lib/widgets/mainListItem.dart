@@ -9,6 +9,8 @@ class MainListItem extends StatelessWidget {
   final String title;
   final String imgUrl;
   final String link;
+  final String attachments;
+
   final ItemType itemType;
   bool isVideo = false;
   bool isAudio = false;
@@ -21,6 +23,7 @@ class MainListItem extends StatelessWidget {
     this.imgUrl = '',
     this.isVideo = false,
     this.itemType = ItemType.article,
+    this.attachments = null,
   });
 
   @override
@@ -43,17 +46,29 @@ class MainListItem extends StatelessWidget {
         break;
     }
     return InkWell(
-      onTap: () {
-
-        if(itemType==ItemType.book){
-       _openLink(link: link);
-
-
-        }else {
-          Navigator.of(context).pushNamed(
-              WebViewScreen.routeName, arguments: link);
+      onTap: () async {
+        if (itemType == ItemType.video) {
+          Navigator.of(context).pushNamed("/tabs", arguments: {
+            "tabIndex": 0,
+            "link": link,
+            "title": title,
+            "attachments": attachments
+          });
         }
-          },
+        if (itemType == ItemType.audio) {
+          Navigator.of(context).pushNamed("/tabs", arguments: {
+            "tabIndex": 1,
+            "link": link,
+            "title": title,
+            "attachments": attachments
+          });
+        }
+        if (itemType == ItemType.book) {
+          await _openLink(link: link);
+        } else {
+          print("salem no action can be done");
+        }
+      },
       child: Container(
         // color: Colors.red,
         width: 146.0,
@@ -69,14 +84,8 @@ class MainListItem extends StatelessWidget {
                   Container(
                     width: 146.0,
                     height: 134.0,
-                    child: !isAudio
-                        ? Image.asset('assets/01.png')
-                        // FadeInImage(
-                        //     image: NetworkImage('https://via.placeholder.com/150'),
-                        //     placeholder: AssetImage('assets/01.png'),
-                        //     fit: BoxFit.cover,
-                        //   )
-                        : Container(),
+                    child:
+                        !isAudio ? Image.asset('assets/01.png') : Container(),
                   ),
                   if (this.isVideo)
                     Image.asset(
@@ -92,10 +101,16 @@ class MainListItem extends StatelessWidget {
                           scale: 0.80,
                         )),
                   if (this.isAudio)
-                    Image.network(
-                      imgUrl,
-                      scale: 0.55,
+                    Image.asset(
+                      "assets/mic.png",
+                      scale: 0.65,
+                      fit: BoxFit.cover,
                     ),
+                  // Image.network(
+                  //   imgUrl,
+                  //   scale: 0.1,
+                  //   fit:BoxFit.cover,
+                  // ),
                 ],
               ),
             ),
@@ -176,5 +191,4 @@ class MainListItem extends StatelessWidget {
     String _url = link;
     await canLaunch(_url) ? await launch(_url) : throw 'Could not launch $_url';
   }
-
 }
