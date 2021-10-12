@@ -84,6 +84,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           appBarTheme: AppBarTheme(
+            backgroundColor: Color(0xFF000E1F),
             textTheme: TextTheme(
                 headline1: TextStyle(
               color: Colors.white,

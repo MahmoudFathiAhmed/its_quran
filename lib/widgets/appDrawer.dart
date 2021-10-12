@@ -7,6 +7,7 @@ import 'package:its_quran/screens/categsScreen.dart';
 import 'package:its_quran/screens/sheikhScreen.dart';
 import 'package:its_quran/screens/termsOfUse.dart';
 import 'package:provider/provider.dart';
+import 'package:share/share.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({
@@ -103,6 +104,15 @@ class AppDrawer extends StatelessWidget {
                 onTap: () =>
                     Navigator.of(context).pushNamed(ContactScreen.routeName),
               ),
+              ListTile(
+                  title: Text('شارك التطبيق'),
+                  leading: Icon(
+                    Icons.share,
+                    size: 24,
+                    color: Theme.of(context).accentColor,
+                  ),
+                  onTap: () => Share.share(
+                      "قم بتجميل تطبيق إِنَّه القُرءَان لتصل إلى المكتبة الضخمة عن القرءان وتفسيره وعلومه\nحمله الآن من متجر جوجل بلاي من هذا الرابط 🌷\n https://play.google.com/store/apps/details?id=com.midad.its_quran ")),
               ListTile(
                 title: Text('نظام مداد كلاود'),
                 leading: Hero(
