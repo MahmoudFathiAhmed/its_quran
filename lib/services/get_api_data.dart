@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+
 class GetAPIData {
   Future<List<dynamic>> getData(
       {@required String type,
@@ -10,7 +11,8 @@ class GetAPIData {
       @required String perPage,
       @required String author}) async {
     Uri url = Uri.parse(
-        "https://cloudelib.midadedev.com/api/api-json/items/all/$type?page_number=$pageNumber&per_page=$perPage&author=$author&sort=title#");
+      
+        "https://library.itsthequran.com/api/api-json/items/all/$type?page_number=$pageNumber&per_page=$perPage&author=$author&sort=title#");
     // print(url);
     http.Response res = await http.get(url);
 
@@ -28,7 +30,7 @@ class GetAPIData {
   }) async {
     List list = [];
     Uri url = Uri.parse(
-        "https://cloudelib.midadedev.com/api/api-json/search/100?word=$text");
+        "https://library.itsthequran.com/api/api-json/search/100?word=$text");
     print(url);
     http.Response res = await http.get(url);
 

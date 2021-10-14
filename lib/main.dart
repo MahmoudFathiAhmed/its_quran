@@ -58,6 +58,7 @@ class MyApp extends StatelessWidget {
         locale: Locale("ar"),
         theme: ThemeData(
           primaryColor: Color(0xFF000E1F),
+          // ignore: deprecated_member_use
           accentColor: Color(0xFFFFC710),
           fontFamily: 'GE SS',
           textTheme: TextTheme(
@@ -85,6 +86,10 @@ class MyApp extends StatelessWidget {
           ),
           appBarTheme: AppBarTheme(
             backgroundColor: Color(0xFF000E1F),
+            // color: Colors.green,
+            
+            
+            // ignore: deprecated_member_use
             textTheme: TextTheme(
                 headline1: TextStyle(
               color: Colors.white,

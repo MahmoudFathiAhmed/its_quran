@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:its_quran/Provider/home_provider.dart';
+import 'package:its_quran/screens/sheikhScreen.dart';
 
 import 'package:its_quran/services/get_api_data.dart';
 
@@ -8,6 +10,7 @@ import 'package:its_quran/widgets/appDrawer.dart';
 import 'package:its_quran/widgets/noInternetConnectionWidget.dart';
 import 'package:its_quran/widgets/searchButton.dart';
 import 'package:its_quran/widgets/shimmer_loader.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -22,8 +25,38 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [SearchButon()],
+      appBar: AppBar( 
+        
+        actions: [
+          // SizedBox(
+          //   width: 20,
+          // ),
+          InkWell(
+            onTap: () {
+              Provider.of<HomeProvider>(context, listen: false)
+                  .changeAuthor(author: "1");
+              Navigator.of(context).pushNamed(SheikhScreen.routeName,
+                  arguments: "د/ أحمد عبد المنعم");
+            },
+            child: Image.asset(
+              'assets/monem.png',
+              scale: 0.8,
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              Provider.of<HomeProvider>(context, listen: false)
+                  .changeAuthor(author: "2");
+              Navigator.of(context).pushNamed(SheikhScreen.routeName,
+                  arguments: "ش/ عمرو الشرقاوي");
+            },
+            child: Image.asset(
+              'assets/sharkawy.png',
+              scale: 0.8,
+            ),
+          ),
+          SearchButon(),
+        ],
         leading: Builder(
           builder: (context) => Tooltip(
             message: 'قائمة التنقل',
@@ -38,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         backgroundColor: Theme.of(context).primaryColor,
         flexibleSpace: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               height: MediaQuery.of(context).size.height * .06,
