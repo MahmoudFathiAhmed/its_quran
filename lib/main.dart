@@ -13,15 +13,12 @@ import 'package:its_quran/screens/search_screen.dart';
 import 'package:its_quran/screens/sheikhScreen.dart';
 import 'package:its_quran/screens/termsOfUse.dart';
 import 'package:its_quran/screens/web_view_screen.dart';
-import 'package:its_quran/services/get_api_data.dart';
 import 'package:its_quran/widgets/HomeScreenSection.dart';
 import 'package:provider/provider.dart';
-import 'package:test/test.dart';
 import 'screens/contactUs.dart';
 import 'screens/fullCategScreen.dart';
-import 'widgets/video/youtube_player.dart';
 
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(MyApp());
@@ -87,8 +84,7 @@ class MyApp extends StatelessWidget {
           appBarTheme: AppBarTheme(
             backgroundColor: Color(0xFF000E1F),
             // color: Colors.green,
-            
-            
+
             // ignore: deprecated_member_use
             textTheme: TextTheme(
                 headline1: TextStyle(

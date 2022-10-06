@@ -25,8 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar( 
-        
+      appBar: AppBar(
         actions: [
           // SizedBox(
           //   width: 20,
@@ -40,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             child: Image.asset(
               'assets/monem.png',
-              scale: 0.8,
+              scale: 0.7,
             ),
           ),
           InkWell(
@@ -52,10 +51,14 @@ class _HomeScreenState extends State<HomeScreen> {
             },
             child: Image.asset(
               'assets/sharkawy.png',
-              scale: 0.8,
+              scale: 0.7,
             ),
           ),
           SearchButon(),
+          Image.asset(
+            'assets/logo.png',
+            scale: 2.8,
+          ),
         ],
         leading: Builder(
           builder: (context) => Tooltip(
@@ -70,20 +73,20 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         backgroundColor: Theme.of(context).primaryColor,
-        flexibleSpace: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: MediaQuery.of(context).size.height * .06,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  scale: 2,
-                  image: AssetImage("assets/logo.png"),
-                ),
-              ),
-            ),
-          ],
-        ),
+        // flexibleSpace: Column(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   children: [
+        //     Container(
+        //       height: MediaQuery.of(context).size.height * .06,
+        //       decoration: BoxDecoration(
+        //         image: DecorationImage(
+        //           scale: 2,
+        //           image: AssetImage("assets/logo.png"),
+        //         ),
+        //       ),
+        //     ),
+        //   ],
+        // ),
       ),
       drawer: AppDrawer(),
       body: RefreshIndicator(
